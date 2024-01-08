@@ -18,7 +18,7 @@ def login():
 """
  connection of customers
 """
-def all_clerks():
+def employees_role():
   name = input("Give a name: ")
   address = input( "Give an address: ")
   items = input( "Give the order: ")
