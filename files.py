@@ -6,12 +6,12 @@ def get_empoyees():
     users[row['username']] = row
   return users
 
-def get_cystomers():
+def get_customers():
   file = open("customers.csv")
     reader = csv.DictReader(file)
     customers = {}
     for row in reader:
-        customers[row['']] = row 
+        customers[row['name']] = row 
     file.close()
     return customers 
   
