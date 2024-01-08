@@ -14,6 +14,10 @@ def login():
   else:
     role = None
   return username , role
+
+"""
+ connection of customers
+"""
 def all_clerks():
   name = input("Give a name: ")
   address = input( "Give an address: ")
