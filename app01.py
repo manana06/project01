@@ -1,3 +1,4 @@
+from files import get_employees and get_customers
 import csv
 """
  connection of employees
