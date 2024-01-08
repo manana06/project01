@@ -5,4 +5,13 @@ def get_empoyees():
   for row in reader:
     users[row['username']] = row
   return users
+
+def get_cystomers():
+  file = open("customers.csv")
+    reader = csv.DictReader(file)
+    customers = {}
+    for row in reader:
+        customers[row['']] = row 
+    file.close()
+    return customers 
   
