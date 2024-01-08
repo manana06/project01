@@ -4,6 +4,7 @@ def get_empoyees():
   users = {}
   for row in reader:
     users[row['username']] = row
+  file.close()
   return users
 
 def get_customers():
