@@ -48,9 +48,9 @@ while True:
   if role == 'clerk':
     choice = employees_role()
   elif role == 'manager':
- add
+     add
   elif role == 'delivery':
-add
+     add
   else:
- add
+     add
   
