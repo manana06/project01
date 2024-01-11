@@ -1,4 +1,3 @@
-from files import get_employees and get_customers
 import csv
 """
  connection of employees
@@ -43,4 +42,15 @@ def get_customers():
         customers[row['name']] = row 
     file.close()
     return customers 
+
+username, role = login()
+while True:
+  if role == 'clerk':
+    choice = employees_role()
+  elif role == 'manager':
+ add
+  elif role == 'delivery':
+add
+  else:
+ add
   
