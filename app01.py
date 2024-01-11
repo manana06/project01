@@ -43,10 +43,18 @@ def get_customers():
     file.close()
     return customers 
 
+id=0
 username, role = login()
 while True:
   if role == 'clerk':
     choice = employees_role()
+    id += 1
+    if delivered == 'Y':
+     print("Order is delivered")
+    elif delivered == 'N':
+     print("Τhe order is pending..")
+    else:
+     print("Something is wrong!")
   elif role == 'manager':
      add
   elif role == 'delivery':
