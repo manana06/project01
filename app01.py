@@ -22,9 +22,28 @@ def employees_role():
   name = input("Give a name: ")
   address = input( "Give an address: ")
   items = input( "Give the order: ")
-  date = input("Give the date: "  )
+  date = input("Give the date (yyyy-mm-dd): "  )
   total = input("Give a total cost: ")
 
+
+def print_open_orders():
+    orders = get_orders()
+    for key in appointements:
+        if orders[key]['delivered'] == '1':
+            print(key, orders[key]['date'],
+                  oredrs[key]['time'], 
+                  orders[key]['order'])
+
+def get_orders():
+    file = open("customers.csv")
+    reader = csv.DictReader(file)
+    appointments = {}
+    for row in reader:
+        orders[row['id']] = row
+    file.close()
+    return orders
+
+            
 def get_empoyees():
   file = open("empoyees.csv")
   reader = csv.DirectReader(file)
