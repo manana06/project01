@@ -28,7 +28,7 @@ def employees_role():
 
 def print_open_orders():
     orders = get_orders()
-    for key in appointements:
+    for key in orders:
         if orders[key]['delivered'] == '1':
             print(key, orders[key]['date'],
                   oredrs[key]['time'], 
@@ -37,7 +37,7 @@ def print_open_orders():
 def get_orders():
     file = open("customers.csv")
     reader = csv.DictReader(file)
-    appointments = {}
+    orders = {}
     for row in reader:
         orders[row['id']] = row
     file.close()
@@ -62,12 +62,11 @@ def get_customers():
     file.close()
     return customers 
 
-id=0
+
 username, role = login()
 while True:
   if role == 'clerk':
     choice = employees_role()
-    id += 1
     if delivered == 'Y':
      print("Order is delivered")
     elif delivered == 'N':
@@ -77,7 +76,7 @@ while True:
   elif role == 'manager':
      add
   elif role == 'delivery':
-     if derivered = 
+     print_open_orders()
   else:
-     add
+     pass
   
