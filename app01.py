@@ -58,7 +58,7 @@ while True:
   elif role == 'manager':
      add
   elif role == 'delivery':
-     add
+     if derivered = 
   else:
      add
   
