@@ -16,9 +16,9 @@ def login():
   return username , role
 
 """
- connection of customers
+ imformations of customers
 """
-def employees_role():
+def customers_info():
   name = input("Give a name: ")
   address = input( "Give an address: ")
   items = input( "Give the order: ")
@@ -26,7 +26,7 @@ def employees_role():
   total = input("Give a total cost: ")
 
 
-def print_open_orders():
+def print_delivered_orders():
     orders = get_orders()
     for key in orders:
         if orders[key]['delivered'] == '1':
