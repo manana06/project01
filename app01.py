@@ -5,7 +5,7 @@ import csv
 def login():
   username = input("Username: ")
   password = input("Passwprd: ")
-  users =get_users()
+  users =get_employees()
   if username in users:
     if password == users[username]['password'] and users[username]['active'] == '1':
       role = users[username]['role']
