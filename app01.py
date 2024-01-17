@@ -18,13 +18,6 @@ def login():
 
 #imformations of customers
 
-def customers_info():
-  name = input("Give a name: ")
-  address = input( "Give an address: ")
-  items = input( "Give the order: ")
-  date = input("Give the date (yyyy-mm-dd): "  )
-  total = input("Give a total cost: ")
-
 def add_customers():
     """
     Gets customrs data from the user, generated the next id,
@@ -42,6 +35,9 @@ def add_customers():
     file.write(str(new_id)+','+name+','+items+','
                +total+','+date+'\n')
     file.close()
+
+def number_of_orders():
+  
 
 
 def print_delivered_orders():
@@ -98,7 +94,7 @@ def get_orders():
 username, role = login()
 while True:
   if role == 'clerk':
-    choice = employees_role()
+    add_customers()
     if delivered == 'Y':
      print("Order is delivered")
     elif delivered == 'N':
