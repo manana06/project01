@@ -36,8 +36,39 @@ def add_customers():
                +total+','+date+'\n')
     file.close()
 
-def number_of_orders():
-  
+def export_orders():
+    cid = input("Give customer ID: ")
+    customer = get_customer_by_id(cid)
+    if customer is None:
+        print("Customer not found.")
+    else:
+        file = open("customer" + cid + ".txt", "w")
+        file.write("CUSTOMER REPORT\n")
+        # write the basic CUSTOMER's data
+        file.write("Name: " + customer['name'] + '\n')
+        file.write("Address: " + customer['address'] + '\n')
+        file.write("Items: " + customer['items'] + '\n')
+        file.write("Date: " + customer['date'] + '\n')
+        file.write("=================================\n")
+        file.write("TREATMENTS\n")
+        orders = get_orders()
+        for key in orders:
+            if orders[key]['customer_id'] == cid and orders[key]['delivered'] == '1':
+                file.write(orders[key]['date'] + ", " +
+                           orers[key]['items'] + '\n')
+
+def get_customer_by_id(cid):
+    """
+    Finds the customer of the given id and return it. 
+    If is not in the file, return None.
+    """
+    file = open(customers.csv")
+    reader = csv.DictReader(file)
+    for row in reader:
+        if row['id'] == cid:
+            return row 
+    file.close()
+    return None
 
 
 def print_delivered_orders():
@@ -102,7 +133,7 @@ while True:
     else:
      print("Something is wrong!")
   elif role == 'manager':
-     add
+     export_orders()
   elif role == 'delivery':
      print_open_orders()
   else:
