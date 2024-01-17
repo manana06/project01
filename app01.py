@@ -1,7 +1,7 @@
 import csv
-"""
- connection of employees
-"""
+
+#connection of employees
+
 def login():
   username = input("Username: ")
   password = input("Passwprd: ")
@@ -15,15 +15,33 @@ def login():
     role = None
   return username , role
 
-"""
- imformations of customers
-"""
+
+#imformations of customers
+
 def customers_info():
   name = input("Give a name: ")
   address = input( "Give an address: ")
   items = input( "Give the order: ")
   date = input("Give the date (yyyy-mm-dd): "  )
   total = input("Give a total cost: ")
+
+def add_customers():
+    """
+    Gets customrs data from the user, generated the next id,
+    based on the size of the customers file, and then appends
+    the new order to the customers.csv
+    """
+    name = input("Give name: ")
+    address = input( "Give an address: ")
+    items = input( "Give the order: ")
+    date = input("Give the date (yyyy-mm-dd): "  )
+    total = input("Give a total cost: ")
+    orders = get_orders()
+    new_id = len(customers) + 1
+    file = open('customers.csv', 'a')
+    file.write(str(new_id)+','+name+','+items+','
+               +total+','+date+'\n')
+    file.close()
 
 
 def print_delivered_orders():
@@ -59,6 +77,20 @@ def get_customers():
     customers = {}
     for row in reader:
         customers[row['name']] = row 
+    file.close()
+    return customers 
+
+def get_orders():
+    """
+    Reads orders from the customers.csv file and returns a 
+    dictionary with id as the key and a the respective customers's
+    record as a value.
+    """
+    file = open("customers.csv")
+    reader = csv.DictReader(file)
+    customers = {}
+    for row in reader:
+        customers[row['id']] = row 
     file.close()
     return customers 
 
